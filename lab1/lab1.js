@@ -1,7 +1,7 @@
 const http = require("http");
 // console.log(http)
-const lab1 = require("fs");
-lab1.writeFileSync("lab1.txt", "hello\n");
+const fs = require("fs");
+fs.writeFileSync("lab1.txt", "hello\n");
 http
   .createServer((request, response) => {
     console.log(request.url);
@@ -12,14 +12,14 @@ http
       var result = 0;
       switch (operator) {
         case "add":
-          result = 0;
+          result;
           for (let i = 2; i < url.length; i++) {
             result += Number(url[i]);
           }
           console.log(result);
           response.write(`<h1> ${result}</h1>`);
           //   lab1.appendFileSync("lab1.txt", operator + ":" + result);
-
+          // fs.appendFileSync("lab1.txt",`\n `)
           break;
         case "sub":
           result = url[2];
@@ -46,7 +46,7 @@ http
           response.write(`<h1> ${result}</h1>`);
           break;
       }
-      lab1.appendFileSync("lab1.txt", operator + ":" + result + "\n");
+      fs.appendFileSync("lab1.txt", `${operator} result = ${result}  \n`);
     }
     response.end();
   })
