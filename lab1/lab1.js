@@ -18,8 +18,7 @@ http
           }
           console.log(result);
           response.write(`<h1> ${result}</h1>`);
-          //   lab1.appendFileSync("lab1.txt", operator + ":" + result);
-          // fs.appendFileSync("lab1.txt",`\n `)
+         
           break;
         case "sub":
           result = url[2];
