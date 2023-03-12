@@ -18,7 +18,7 @@ http
           }
           console.log(result);
           response.write(`<h1> ${result}</h1>`);
-         
+
           break;
         case "sub":
           result = url[2];
